@@ -1,0 +1,8 @@
+**/*.svg
+**/*.ejs
+**/*.html
+.public
+node_modules
+.yarn
+build
+coverage
