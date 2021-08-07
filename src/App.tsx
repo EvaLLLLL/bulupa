@@ -1,11 +1,12 @@
 import React from 'react'
 import logo from './logo.svg'
 import './App.css'
+import styled from 'styled-components'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
+      <Title className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
@@ -18,9 +19,13 @@ function App() {
         >
           Learn React
         </a>
-      </header>
+      </Title>
     </div>
   )
 }
 
 export default App
+
+const Title = styled.div`
+  color: pink;
+`
