@@ -1,5 +1,5 @@
 import React from 'react'
-import { Layout, Menu } from 'antd'
+import { Layout as AntdLayout, Menu } from 'antd'
 import {
   MenuUnfoldOutlined,
   MenuFoldOutlined,
@@ -8,9 +8,9 @@ import {
   UploadOutlined,
 } from '@ant-design/icons'
 
-const { Header, Sider, Content } = Layout
+const { Header, Sider, Content } = AntdLayout
 
-export const LayoutDemo: React.FC = () => {
+export const Layout: React.FC = ({ children }) => {
   const [collapsed, setCollapsed] = React.useState(false)
 
   const toggle = () => {
@@ -18,7 +18,7 @@ export const LayoutDemo: React.FC = () => {
   }
 
   return (
-    <Layout>
+    <AntdLayout>
       <Sider trigger={null} collapsible collapsed={collapsed}>
         <div className="logo" />
         <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
@@ -33,7 +33,7 @@ export const LayoutDemo: React.FC = () => {
           </Menu.Item>
         </Menu>
       </Sider>
-      <Layout className="site-layout">
+      <AntdLayout className="site-layout">
         <Header className="site-layout-background" style={{ padding: 0 }}>
           {collapsed ? (
             <MenuUnfoldOutlined onClick={toggle} />
@@ -49,9 +49,9 @@ export const LayoutDemo: React.FC = () => {
             minHeight: 280,
           }}
         >
-          Content
+          {children}
         </Content>
-      </Layout>
-    </Layout>
+      </AntdLayout>
+    </AntdLayout>
   )
 }
