@@ -36,9 +36,9 @@ export const Layout: React.FC = ({ children }) => {
       <AntdLayout className="site-layout">
         <Header className="site-layout-background" style={{ padding: 0 }}>
           {collapsed ? (
-            <MenuUnfoldOutlined onClick={toggle} />
+            <MenuUnfoldOutlined onClick={() => toggle()} />
           ) : (
-            <MenuFoldOutlined onClick={toggle} />
+            <MenuFoldOutlined onClick={() => toggle()} />
           )}
         </Header>
         <Content
